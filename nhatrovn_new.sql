@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `nhatrovn`
 --
-CREATE DATABASE IF NOT EXISTS `nhatrovn` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `nhatrovn`;
+-- CREATE DATABASE IF NOT EXISTS `nhatrovn` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+-- USE `nhatrovn`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +37,7 @@ CREATE TABLE `activate_code` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `date_expired` datetime NOT NULL,
-  `code` varchar(200) COLLATE utf8_bin NOT NULL
+  `code` varchar(200) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY(`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -858,7 +858,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `subscription_id` int(11) NOT NULL,
   `hostID` int(11) NOT NULL,
   `unique_key` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -874,7 +874,7 @@ CREATE TABLE IF NOT EXISTS `paid_bill` (
   `hostID` int(11) NOT NULL,
   `unique_key` varchar(255) NOT NULL,
   `paid_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
@@ -4174,7 +4174,7 @@ ALTER TABLE `images`
 --
 -- Các ràng buộc cho bảng `payment`
 --
---ALTER TABLE `payment`
+-- ALTER TABLE `payment`
 -- ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`bookingID`) REFERENCES `booking` (`id`);
 
 --
